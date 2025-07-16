@@ -60,7 +60,7 @@ const AdminLogin: React.FC<AdminLoginProps> = ({ theme = 'dark' }) => {
             <Shield className="w-8 h-8 text-white" />
           </div>
           <h1 className={`text-3xl font-bold ${themeStyles.text} mb-2`}>Admin Dashboard</h1>
-          <p className={`${themeStyles.textSecondary}`}>Sign in to access admin panel</p>
+          <p className={`${themeStyles.textSecondary}`}>JXFRCloud™ Admin Panel</p>
         </div>
 
         {error && (
@@ -88,46 +88,3 @@ const AdminLogin: React.FC<AdminLoginProps> = ({ theme = 'dark' }) => {
 
           <div>
             <label className={`block text-sm font-medium ${themeStyles.textSecondary} mb-2`}>
-              <Lock className="w-4 h-4 inline mr-2" />
-              Password
-            </label>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              className={`w-full px-4 py-3 ${themeStyles.input} border rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all duration-300`}
-              placeholder="Enter your password"
-            />
-          </div>
-
-          <button
-            type="submit"
-            disabled={loading}
-            className={`w-full ${themeStyles.button} disabled:opacity-50 text-white py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center space-x-2`}
-          >
-            {loading ? (
-              <>
-                <Loader className="w-5 h-5 animate-spin" />
-                <span>Signing In...</span>
-              </>
-            ) : (
-              <>
-                <Shield className="w-5 h-5" />
-                <span>Sign In</span>
-              </>
-            )}
-          </button>
-        </form>
-
-        <div className={`mt-6 p-4 ${themeStyles.card} rounded-xl border`}>
-          <p className={`text-xs ${themeStyles.textSecondary} text-center`}>
-            Only authorized administrators can access this dashboard
-          </p>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default AdminLogin;
